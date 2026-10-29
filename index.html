@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="id" class="dark scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FANBIL SHOWW | Showroom Mobil Premium & Terkurasi</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+
+  <!-- Tailwind CSS Play CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#fffbeb',
+              100: '#fef3c7',
+              200: '#fde68a',
+              300: '#fcd34d',
+              400: '#fbbf24',
+              500: '#f59e0b',
+              600: '#d97706',
+              700: '#b45309',
+            },
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+            cinzel: ['"Cinzel"', 'serif'],
+          },
+        },
+      },
+    };
+  </script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body
+  class="bg-slate-950 text-slate-100 antialiased min-h-screen flex flex-col selection:bg-amber-500 selection:text-slate-950">
+  <!-- Ambient Lighting Effect -->
+  <div class="fixed inset-0 pointer-events-none z-0 ambient-glow" aria-hidden="true"></div>
+
+  <!-- Header & Navigasi -->
+  <header
+    class="sticky top-0 z-40 bg-slate-950/80 backdrop-blur-xl border-b border-slate-800/80 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <!-- Logo -->
+      <a href="index.html" class="flex items-center gap-3 group">
+        <div
+          class="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center text-slate-950 font-black text-xl shadow-lg shadow-amber-500/20 group-hover:scale-105 transition-transform duration-200">
+          V
+        </div>
+        <div>
+          <span class="text-xl font-bold tracking-tight text-white flex items-center font-cinzel">
+            FANBIL<span class="text-amber-400 ml-1">SHOWW</span>
+          </span>
+          <span class="text-[10px] uppercase tracking-widest text-slate-400 block -mt-1 font-sans">Curated
+            Showroom</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex items-center gap-1 bg-slate-900/60 p-1.5 rounded-full border border-slate-800/80">
+        <a href="index.html" class="px-5 py-2 rounded-full text-sm font-semibold bg-amber-500 text-slate-950 shadow-md">
+          Beranda
+        </a>
+        <a href="katalog.html"
+          class="px-5 py-2 rounded-full text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800/80 transition-all">
+          Katalog Unit
+        </a>
+        <a href="tentang.html"
+          class="px-5 py-2 rounded-full text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800/80 transition-all">
+          Tentang Kami
+        </a>
+        <a href="kontak.html"
+          class="px-5 py-2 rounded-full text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800/80 transition-all">
+          Kontak & Kunjungan
+        </a>
+      </nav>
+
+      <!-- CTA & Mobile Toggle -->
+      <div class="flex items-center gap-3">
+        <a href="katalog.html"
+          class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-bold text-xs uppercase tracking-wider shadow-lg shadow-amber-500/25 transition-all duration-200 active:scale-95">
+          Lihat Unit
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>
+        </a>
+
+        <!-- Mobile Hamburger Button -->
+        <button id="mobile-menu-btn" type="button"
+          class="md:hidden p-2.5 rounded-xl bg-slate-900 text-slate-400 hover:text-white hover:bg-slate-800 border border-slate-800 transition-all"
+          aria-label="Buka Menu" aria-expanded="false">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobile-menu"
+      class="hidden md:hidden border-t border-slate-800/80 bg-slate-950/95 backdrop-blur-2xl px-4 pt-3 pb-6 space-y-2">
+      <a href="index.html" class="block px-4 py-3 rounded-xl text-base font-semibold bg-amber-500 text-slate-950">
+        Beranda
+      </a>
+      <a href="katalog.html"
+        class="block px-4 py-3 rounded-xl text-base font-medium text-slate-300 hover:text-white hover:bg-slate-900">
+        Katalog Unit
+      </a>
+      <a href="tentang.html"
+        class="block px-4 py-3 rounded-xl text-base font-medium text-slate-300 hover:text-white hover:bg-slate-900">
+        Tentang Kami
+      </a>
+      <a href="kontak.html"
+        class="block px-4 py-3 rounded-xl text-base font-medium text-slate-300 hover:text-white hover:bg-slate-900">
+        Kontak & Kunjungan
+      </a>
+      <div class="pt-3">
+        <a href="katalog.html"
+          class="w-full text-center block py-3 rounded-xl bg-amber-500 text-slate-950 font-bold text-sm">
+          Eksplorasi Katalog
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="flex-grow z-10">
+    <!-- Hero Section -->
+    <section class="relative pt-12 pb-20 lg:pt-20 lg:pb-32 overflow-hidden">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+          <!-- Teks Hero -->
+          <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+            <div
+              class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-semibold tracking-wide uppercase">
+              <span class="w-2 h-2 rounded-full bg-amber-400 animate-ping"></span>
+              Official Showroom Partner · BTNG 2026
+            </div>
+
+            <h1
+              class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.1] font-cinzel">
+              Koleksi Mobil Pilihan, <span
+                class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-amber-300 to-amber-500">Siap
+                Mengaspal.</span>
+            </h1>
+
+            <p class="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto lg:mx-0 font-light leading-relaxed">
+              FANBIL SHOWW menghadirkan unit terkurasi yang terhubung secara realtime dengan endpoint API resmi BTNG.
+              Temukan mobil impian dengan inspeksi ketat dan transparansi spesifikasi penuh.
+            </p>
+
+            <!-- Tombol Aksi -->
+            <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+              <a href="katalog.html"
+                class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-sm uppercase tracking-wider shadow-xl shadow-amber-500/20 transition-all duration-200 active:scale-95">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                </svg>
+                Jelajahi Semua Unit
+              </a>
+              <a href="kontak.html"
+                class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-slate-900/80 hover:bg-slate-800 text-white font-semibold text-sm border border-slate-700/80 transition-all duration-200 active:scale-95">
+                Jadwalkan Test Drive
+              </a>
+            </div>
+
+            <!-- Statistik Live dari API -->
+            <div class="pt-8 grid grid-cols-3 gap-4 border-t border-slate-800/80 text-left">
+              <div>
+                <div id="stat-total" class="text-2xl sm:text-3xl font-extrabold text-amber-400 font-cinzel">12</div>
+                <div class="text-xs text-slate-400 mt-0.5">Total Unit di Floor</div>
+              </div>
+              <div class="border-l border-slate-800 pl-4">
+                <div id="stat-ready" class="text-2xl sm:text-3xl font-extrabold text-emerald-400 font-cinzel">10</div>
+                <div class="text-xs text-slate-400 mt-0.5">Unit Siap Kirim</div>
+              </div>
+              <div class="border-l border-slate-800 pl-4">
+                <div id="stat-brands" class="text-2xl sm:text-3xl font-extrabold text-white font-cinzel">8+</div>
+                <div class="text-xs text-slate-400 mt-0.5">Merek Terkemuka</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Visual Showroom Showcase -->
+          <div class="lg:col-span-5 relative">
+            <div class="relative mx-auto max-w-md lg:max-w-none">
+              <!-- Frame dekorasi -->
+              <div
+                class="absolute -inset-1.5 rounded-3xl bg-gradient-to-tr from-amber-500/30 to-sky-500/20 blur-xl opacity-70">
+              </div>
+              <div class="relative rounded-2xl overflow-hidden border border-slate-800 bg-slate-900 shadow-2xl">
+                <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1400&q=80"
+                  alt="Mobil Sport di Showroom FANBIL"
+                  class="w-full h-80 sm:h-96 object-cover hover:scale-105 transition-transform duration-700" />
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
+                <div
+                  class="absolute bottom-5 left-5 right-5 p-4 rounded-xl bg-slate-900/90 backdrop-blur-md border border-slate-700/80 flex items-center justify-between">
+                  <div>
+                    <span class="text-[11px] font-bold text-amber-400 uppercase tracking-wider block">Private
+                      Viewing</span>
+                    <span class="text-sm font-semibold text-white">FANBIL Gallery Semarang</span>
+                  </div>
+                  <span
+                    class="px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
+                    Buka Hari Ini
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Filter Merek Cepat -->
+    <section class="py-8 border-y border-slate-800/80 bg-slate-950/60 backdrop-blur-md">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div class="flex items-center gap-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-amber-400"></span>
+            <span class="text-xs uppercase tracking-widest font-bold text-slate-400">Pilih Berdasarkan Merek:</span>
+          </div>
+          <div id="brand-pills" class="flex flex-wrap items-center justify-center gap-2">
+            <!-- Diisi secara dinamis dari API lewat JavaScript -->
+            <span class="text-xs text-slate-500 animate-pulse">Memuat merek dari API...</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Highlight Unit Unggulan (Data dari API) -->
+    <section class="py-20 lg:py-28">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+          <div>
+            <div class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-amber-400 mb-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
+              Koleksi Pilihan
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-white font-cinzel">
+              Unit Unggulan Minggu Ini
+            </h2>
+            <p class="text-slate-400 text-sm sm:text-base mt-2 max-w-xl">
+              Unit terpopuler dan siap serah terima. Seluruh data diproses secara dinamis dari API resmi panitia BTNG.
+            </p>
+          </div>
+          <a href="katalog.html"
+            class="inline-flex items-center gap-2 text-sm font-bold text-amber-400 hover:text-amber-300 transition-colors group">
+            Lihat Semua Unit di Katalog
+            <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none"
+              stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </a>
+        </div>
+
+        <!-- Container Grid Mobil Unggulan (Diisi dinamis oleh DOM) -->
+        <div id="featured-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
+          aria-live="polite">
+          <!-- Skeleton Loading akan muncul sebelum data API tiba -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Keunggulan / Value Proposition -->
+    <section class="py-20 bg-slate-900/40 border-t border-slate-800/80">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+          <span class="text-xs font-bold uppercase tracking-widest text-amber-400 block mb-2">Standar Kualitas</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white font-cinzel">
+            Mengapa Memilih FANBIL SHOWW?
+          </h2>
+          <p class="text-slate-400 text-sm mt-3">
+            Kami menetapkan standar baru dalam pengalaman kepemilikan mobil dengan jaminan transparansi penuh.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div
+            class="p-8 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-amber-500/40 transition-all duration-300 group">
+            <div
+              class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-amber-500 group-hover:text-slate-950 transition-all duration-300">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2 font-cinzel">Inspeksi 160 Titik</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">
+              Setiap unit melewati uji teknis menyeluruh mulai dari transmisi, mesin, bebas tabrakan struktural, hingga
+              bebas genangan banjir.
+            </p>
+          </div>
+
+          <div
+            class="p-8 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-amber-500/40 transition-all duration-300 group">
+            <div
+              class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-amber-500 group-hover:text-slate-950 transition-all duration-300">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2 font-cinzel">Harga Jujur & Transparan</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">
+              Tidak ada biaya tersembunyi. Harga OTR tercantum secara jelas dengan dokumen BPKB dan STNK resmi yang siap
+              balik nama.
+            </p>
+          </div>
+
+          <div
+            class="p-8 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-amber-500/40 transition-all duration-300 group">
+            <div
+              class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-amber-500 group-hover:text-slate-950 transition-all duration-300">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2 font-cinzel">Layanan Test Drive Eksklusif</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">
+              Dapatkan pengalaman berkendara sebelum memutuskan. Kami siap menyiapkan unit di showroom untuk Anda
+              nikmati.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section CTA Banner -->
+    <section class="py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+          class="relative rounded-3xl overflow-hidden bg-gradient-to-r from-amber-600 to-amber-500 p-8 sm:p-12 lg:p-16 text-slate-950 flex flex-col md:flex-row items-center justify-between gap-8 shadow-2xl shadow-amber-500/20">
+          <div class="max-w-xl text-center md:text-left">
+            <h3 class="text-3xl sm:text-4xl font-extrabold tracking-tight font-cinzel">
+              Ingin Melihat Unit Langsung di Showroom?
+            </h3>
+            <p class="mt-3 text-slate-900 font-medium text-sm sm:text-base">
+              Hubungi konsultan kami atau jadwalkan kunjungan privat hari ini. Tim floor FANBIL SHOWW siap menyambut
+              Anda.
+            </p>
+          </div>
+          <div class="flex flex-col sm:flex-row gap-4 w-full md:w-auto">
+            <a href="kontak.html"
+              class="px-8 py-4 rounded-xl bg-slate-950 hover:bg-slate-900 text-white font-bold text-sm uppercase tracking-wider text-center shadow-lg transition-all active:scale-95">
+              Jadwalkan Kunjungan
+            </a>
+            <a href="katalog.html"
+              class="px-8 py-4 rounded-xl bg-amber-400/50 hover:bg-amber-400 text-slate-950 font-bold text-sm uppercase tracking-wider text-center border border-slate-950/20 transition-all active:scale-95">
+              Lihat Semua Mobil
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-slate-950 border-t border-slate-800 text-slate-400 text-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
+        <!-- Kolom 1: Brand & Bio -->
+        <div class="md:col-span-2 space-y-4">
+          <div class="flex items-center gap-3">
+            <div
+              class="w-9 h-9 rounded-xl bg-amber-500 text-slate-950 font-black text-lg flex items-center justify-center font-cinzel">
+              V
+            </div>
+            <span class="text-xl font-bold text-white font-cinzel">
+              FANBIL<span class="text-amber-400 ml-1">SHOWW</span>
+            </span>
+          </div>
+          <p class="text-slate-400 text-sm max-w-md leading-relaxed">
+            Showroom mobil premium yang dirancang untuk Tugas Akhir BTNG Kelas Frontend. Terhubung langsung dengan
+            endpoint API resmi panitia DNCC UDINUS.
+          </p>
+          <div class="text-xs text-slate-500">
+            Tech Stack: HTML5 · Tailwind CSS · Vanilla JavaScript (Fetch API & DOM Manipulation)
+          </div>
+        </div>
+
+        <!-- Kolom 2: Navigasi Cepat -->
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-wider text-white mb-4">Navigasi Halaman</h4>
+          <ul class="space-y-2.5">
+            <li><a href="index.html" class="hover:text-amber-400 transition-colors">Beranda</a></li>
+            <li><a href="katalog.html" class="hover:text-amber-400 transition-colors">Koleksi Mobil (API)</a></li>
+            <li><a href="tentang.html" class="hover:text-amber-400 transition-colors">Tentang FANBIL SHOWW</a></li>
+            <li><a href="kontak.html" class="hover:text-amber-400 transition-colors">Kontak & Lokasi</a></li>
+          </ul>
+        </div>
+
+        <!-- Kolom 3: Info API & Teknis -->
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-wider text-white mb-4">Integrasi API</h4>
+          <div class="p-3.5 rounded-xl bg-slate-900 border border-slate-800 text-xs space-y-1.5">
+            <span class="text-amber-400 font-mono font-medium block">GET /api/mobil</span>
+            <p class="text-slate-400 text-[11px]">
+              Endpoint: api-web.dnccudinus.org/api/mobil
+            </p>
+            <div class="flex items-center gap-1.5 text-emerald-400 text-[11px] font-semibold pt-1">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+              Endpoint Terkoneksi
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="mt-12 pt-8 border-t border-slate-800/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+        <p>© 2026 FANBIL SHOWW. Tugas Akhir BTNG Frontend.</p>
+        <p>Dibuat dengan HTML5, Tailwind CSS, & Vanilla JS</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal Dialog Detail Mobil -->
+  <div id="car-modal"
+    class="fixed inset-0 z-50 hidden items-center justify-center p-4 sm:p-6 bg-slate-950/80 backdrop-blur-md"
+    role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div id="modal-detail-content"
+      class="relative w-full max-w-2xl bg-slate-900 border border-slate-800 rounded-3xl shadow-2xl overflow-hidden max-h-[90vh] overflow-y-auto">
+      <!-- Konten modal akan digenerate otomatis oleh openCarModal() di app.js -->
+    </div>
+  </div>
+
+  <!-- Script Utama (Root & Fallback) -->
+  <script src="app.js"></script>
+</body>
+
+</html>

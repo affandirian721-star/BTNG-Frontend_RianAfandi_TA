@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="id" class="dark scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Katalog Koleksi Unit | FANBIL SHOWW</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+
+  <!-- Tailwind CSS Play CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#fffbeb',
+              100: '#fef3c7',
+              200: '#fde68a',
+              300: '#fcd34d',
+              400: '#fbbf24',
+              500: '#f59e0b',
+              600: '#d97706',
+              700: '#b45309',
+            },
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+            cinzel: ['"Cinzel"', 'serif'],
+          },
+        },
+      },
+    };
+  </script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body
+  class="bg-slate-950 text-slate-100 antialiased min-h-screen flex flex-col selection:bg-amber-500 selection:text-slate-950">
+  <!-- Ambient Lighting Effect -->
+  <div class="fixed inset-0 pointer-events-none z-0 ambient-glow" aria-hidden="true"></div>
+
+  <!-- Header & Navigasi -->
+  <header
+    class="sticky top-0 z-40 bg-slate-950/80 backdrop-blur-xl border-b border-slate-800/80 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <!-- Logo -->
+      <a href="index.html" class="flex items-center gap-3 group">
+        <div
+          class="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center text-slate-950 font-black text-xl shadow-lg shadow-amber-500/20 group-hover:scale-105 transition-transform duration-200">
+          V
+        </div>
+        <div>
+          <span class="text-xl font-bold tracking-tight text-white flex items-center font-cinzel">
+            FANBIL<span class="text-amber-400 ml-1">SHOWW</span>
+          </span>
+          <span class="text-[10px] uppercase tracking-widest text-slate-400 block -mt-1 font-sans">Curated
+            Showroom</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex items-center gap-1 bg-slate-900/60 p-1.5 rounded-full border border-slate-800/80">
+        <a href="index.html"
+          class="px-5 py-2 rounded-full text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800/80 transition-all">
+          Beranda
+        </a>
+        <a href="katalog.html"
+          class="px-5 py-2 rounded-full text-sm font-semibold bg-amber-500 text-slate-950 shadow-md">
+          Katalog Unit
+        </a>
+        <a href="tentang.html"
+          class="px-5 py-2 rounded-full text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800/80 transition-all">
+          Tentang Kami
+        </a>
+        <a href="kontak.html"
+          class="px-5 py-2 rounded-full text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800/80 transition-all">
+          Kontak & Kunjungan
+        </a>
+      </nav>
+
+      <!-- CTA & Mobile Toggle -->
+      <div class="flex items-center gap-3">
+        <a href="kontak.html"
+          class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-semibold text-xs uppercase tracking-wider border border-slate-700 transition-all active:scale-95">
+          Hubungi Konsultan
+        </a>
+
+        <button id="mobile-menu-btn" type="button"
+          class="md:hidden p-2.5 rounded-xl bg-slate-900 text-slate-400 hover:text-white hover:bg-slate-800 border border-slate-800 transition-all"
+          aria-label="Buka Menu" aria-expanded="false">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobile-menu"
+      class="hidden md:hidden border-t border-slate-800/80 bg-slate-950/95 backdrop-blur-2xl px-4 pt-3 pb-6 space-y-2">
+      <a href="index.html"
+        class="block px-4 py-3 rounded-xl text-base font-medium text-slate-300 hover:text-white hover:bg-slate-900">
+        Beranda
+      </a>
+      <a href="katalog.html" class="block px-4 py-3 rounded-xl text-base font-semibold bg-amber-500 text-slate-950">
+        Katalog Unit
+      </a>
+      <a href="tentang.html"
+        class="block px-4 py-3 rounded-xl text-base font-medium text-slate-300 hover:text-white hover:bg-slate-900">
+        Tentang Kami
+      </a>
+      <a href="kontak.html"
+        class="block px-4 py-3 rounded-xl text-base font-medium text-slate-300 hover:text-white hover:bg-slate-900">
+        Kontak & Kunjungan
+      </a>
+    </div>
+  </header>
+
+  <main class="flex-grow z-10 py-10 sm:py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Header Halaman -->
+      <div class="mb-10 text-center max-w-2xl mx-auto">
+        <div
+          class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-semibold uppercase tracking-wider mb-3">
+          <span class="w-2 h-2 rounded-full bg-amber-400"></span>
+          Live Data Feed API
+        </div>
+        <h1 class="text-3xl sm:text-5xl font-extrabold text-white font-cinzel tracking-tight">
+          Katalog Unit Showroom
+        </h1>
+        <p class="text-slate-400 text-sm sm:text-base mt-3">
+          Jelajahi seluruh armada mobil yang tersedia di floor FANBIL SHOWW. Filter berdasarkan merek, tipe transmisi,
+          bahan bakar, atau urutkan harga.
+        </p>
+      </div>
+
+      <!-- Filter & Search Toolbar Card -->
+      <div class="p-6 sm:p-8 rounded-3xl bg-slate-900/90 border border-slate-800/90 shadow-2xl backdrop-blur-xl mb-8">
+        <form id="filter-form" class="space-y-4" onsubmit="event.preventDefault();">
+          <!-- Baris Atas: Input Pencarian -->
+          <div class="relative">
+            <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-slate-400">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              </svg>
+            </div>
+            <input type="search" id="search-input"
+              placeholder="Cari nama unit, contoh: Fortuner, CR-V, Jimny, Ioniq 5, Seal..."
+              class="w-full pl-12 pr-4 py-3.5 rounded-2xl bg-slate-950/80 border border-slate-800 text-white placeholder-slate-500 focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 text-sm transition-all shadow-inner" />
+          </div>
+
+          <!-- Baris Bawah: Dropdown Filter -->
+          <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 pt-2">
+            <!-- Filter Merek -->
+            <div>
+              <label for="filter-brand" class="block text-xs font-medium text-slate-400 mb-1.5">Merek Mobil</label>
+              <select id="filter-brand"
+                class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950/80 border border-slate-800 text-slate-200 text-xs sm:text-sm focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition-all cursor-pointer">
+                <option value="">Semua Merek</option>
+              </select>
+            </div>
+
+            <!-- Filter Transmisi -->
+            <div>
+              <label for="filter-transmisi" class="block text-xs font-medium text-slate-400 mb-1.5">Transmisi</label>
+              <select id="filter-transmisi"
+                class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950/80 border border-slate-800 text-slate-200 text-xs sm:text-sm focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition-all cursor-pointer">
+                <option value="">Semua Transmisi</option>
+              </select>
+            </div>
+
+            <!-- Filter Bahan Bakar -->
+            <div>
+              <label for="filter-fuel" class="block text-xs font-medium text-slate-400 mb-1.5">Bahan Bakar</label>
+              <select id="filter-fuel"
+                class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950/80 border border-slate-800 text-slate-200 text-xs sm:text-sm focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition-all cursor-pointer">
+                <option value="">Semua Bahan Bakar</option>
+              </select>
+            </div>
+
+            <!-- Filter Status -->
+            <div>
+              <label for="filter-status" class="block text-xs font-medium text-slate-400 mb-1.5">Status Unit</label>
+              <select id="filter-status"
+                class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950/80 border border-slate-800 text-slate-200 text-xs sm:text-sm focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition-all cursor-pointer">
+                <option value="">Semua Status</option>
+                <option value="tersedia">Tersedia</option>
+                <option value="sold">Terjual (Sold)</option>
+              </select>
+            </div>
+
+            <!-- Sortir -->
+            <div class="col-span-2 sm:col-span-1">
+              <label for="sort-by" class="block text-xs font-medium text-slate-400 mb-1.5">Urutkan</label>
+              <select id="sort-by"
+                class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950/80 border border-slate-800 text-slate-200 text-xs sm:text-sm focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition-all cursor-pointer">
+                <option value="newest">Terbaru</option>
+                <option value="price-asc">Harga Terendah</option>
+                <option value="price-desc">Harga Tertinggi</option>
+                <option value="year-desc">Tahun Rilis Baru</option>
+                <option value="name">Nama A-Z</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Baris Informasi Hasil & Reset -->
+          <div class="flex items-center justify-between pt-3 border-t border-slate-800/80 text-xs text-slate-400">
+            <span id="result-count">Memuat armada mobil dari API...</span>
+            <button type="button" id="btn-reset-filter"
+              class="text-amber-400 hover:text-amber-300 font-medium inline-flex items-center gap-1 hover:underline cursor-pointer">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+              </svg>
+              Reset Filter
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Grid Container Katalog Mobil -->
+      <div id="catalog-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-7"
+        aria-live="polite">
+        <!-- Diisi dinamis oleh fungsi renderCarCards() di app.js -->
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-slate-950 border-t border-slate-800 text-slate-400 text-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+        <p>© 2026 FANBIL SHOWW. Data mobil disinkronkan dari <code>api-web.dnccudinus.org/api/mobil</code></p>
+        <div class="flex gap-4">
+          <a href="index.html" class="hover:text-amber-400">Beranda</a>
+          <a href="tentang.html" class="hover:text-amber-400">Tentang</a>
+          <a href="kontak.html" class="hover:text-amber-400">Kontak</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal Dialog Detail Mobil -->
+  <div id="car-modal"
+    class="fixed inset-0 z-50 hidden items-center justify-center p-4 sm:p-6 bg-slate-950/80 backdrop-blur-md"
+    role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div id="modal-detail-content"
+      class="relative w-full max-w-2xl bg-slate-900 border border-slate-800 rounded-3xl shadow-2xl overflow-hidden max-h-[90vh] overflow-y-auto">
+      <!-- Konten modal akan digenerate otomatis oleh openCarModal() di app.js -->
+    </div>
+  </div>
+
+  <!-- Script Utama -->
+  <script src="app.js"></script>
+</body>
+
+</html>
